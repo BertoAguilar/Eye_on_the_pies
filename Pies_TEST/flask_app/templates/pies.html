@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Pies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='pies.css') }}">
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/small_pie_icon.png')}}" type="image/x-icon">
+</head>
+<body>
+    <div>
+        <h2>All Pies</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pie Name</th>
+                        <th> Baker</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pie in pies %}
+                    <tr>
+                    <td>{{ pie.name }}</td>
+                    <td>{{ pie.baker.first_name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/dashboard" class="myPies">Go Back to My Pies</a>
+    </div>
+    <a href="/logout">Logout</a>
+</body>
+</html>

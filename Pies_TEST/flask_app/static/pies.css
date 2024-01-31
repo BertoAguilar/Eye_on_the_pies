@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    font-size: 20px;
+    font-family: math;
+    background-color: gainsboro;
+}
+table, th, td {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.myPies {
+    vertical-align: -35px;
+}

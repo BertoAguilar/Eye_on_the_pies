@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    font-size: 20px;
+    font-family: math;
+    background-color: gainsboro;
+}
+.welcome{
+    font-size: 38px;
+}
+.new{
+    display: flex;
+    flex-direction: column;
+}
+.new_pie{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+}
+
+table, th, td {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.allPies {
+    vertical-align: -35px;
+}
+.alert_pie{
+    font-size: 26px;
+    color: red;
+}

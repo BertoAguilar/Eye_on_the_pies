@@ -1,0 +1,36 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    font-size: 20px;
+    font-family: math;
+    background-color: gainsboro;
+}
+.reglogin {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+    padding: 15px;
+}
+.login {
+    display: flex;
+    justify-content: center;
+    width: min-content;
+    padding: 15px;
+}
+.alert_register{
+    font-size: 26px;
+    color: red;
+}
+.alert_login{
+    font-size: 26px;
+    color: red;
+}

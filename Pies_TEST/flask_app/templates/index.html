@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/small_pie_icon.png')}}" type="image/x-icon">
+</head>
+<body>
+    <h1>Eye on the Pies</h1>
+    <div class="reglogin">
+        <div class="register">
+            <form action="/register" method="post">
+                <h2>Register</h2>
+                {% with messages = get_flashed_messages(category_filter=['register']) %}
+                {% if messages %}
+                <div class="alert_register" role="alert">
+                    <strong>There was an issue registering your account</strong>
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% endwith %}
+                    <label for="first_name">First Name</label>
+                    <input type="text" name="first_name" id="first_name">
+                    
+                    <label for="last_name">Last Name</label>
+                    <input type="text" name="last_name" id="last_name">
+                    
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email">
+                    
+                    <label for="password">Password</label>
+                    <input type="text" name="password" id="password">
+                    
+                    <label for="confirm">Confirm Password</label>
+                    <input type="text" name="confirm" id="confirm">
+                    
+                    <input type="submit" value="Register" class="createbtn">
+                </form>
+    </div>
+    <div class="login">
+        <form action="/login" method="post">
+            <h2>Login</h2>
+            {% with messages = get_flashed_messages(category_filter=['login']) %}
+            {% if messages %}
+            <div class="alert_login" role="alert">
+                <strong>There was an issue logging in</strong>
+                {% for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email">
+            <label for="password">Password</label>
+            <input type="text" name="password" id="password">
+            <input type="submit" value="Login" class="createbtn">
+        </form>
+    </div>
+</div>
+</body>
+</html>

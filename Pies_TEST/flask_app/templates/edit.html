@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Edit {{name}}</h1>
+    <form action="/edit/pie" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="{{name}}">
+        
+        <label for="filling">Filling:</label>
+        <input type="text" name="filling" id="filling" value="{{filling}}">
+        
+        <label for="crust">Crust Type:</label>
+        <input type="text" name="crust" id="crust" value="{{crust}}">
+        <input type="submit" value="Update Pie" class="createbtn">
+    </form>
+    <a href="/dashboard">Go Back to My Pies</a>
+</body>
+</html>

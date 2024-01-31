@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/small_pie_icon.png')}}" type="image/x-icon">
+</head>
+<body>
+    <div>
+        <h2 class="welcome">Welcome {{user.first_name}}</h2>
+        <h2>Pies by {{user.first_name}}</h2>
+        <table>
+            <thead>
+                <tr class="tableActions">
+                    <th> Pie Name</th>
+                    <th> Filling</th>
+                    <th> Crust</th>
+                </tr>
+                <tbody>
+                        {% for pie in user.creations %}
+                        <tr>
+                            <td>{{pie.name}}</td>
+                            <td>{{pie.filling}}</td>
+                            <td>{{pie.crust}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </thead>
+        </table>
+        <a href="/pies" class="allPies">Go To All Pies</a>
+    </div>
+        <div class="new">
+            <h2>Add A New Pie</h2>
+            <div class="new_pie">
+                <form action="/create/pie" method="post">
+                    {% with messages = get_flashed_messages(category_filter=['createPie']) %}
+                    {% if messages %}
+                    <div class="alert_pie" role="alert">
+                        <strong>There was an issue with the pie!</strong>
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% endwith %}
+                    <label for="name">Pie Name:</label>
+                    <input type="text" name="name" id="name">
+
+                    <label for="filling">Filling:</label>
+                    <input type="text" name="filling" id="filling">
+
+                    <label for="crust">Crust Type:</label>
+                    <input type="text" name="crust" id="crust">
+                    <input type="submit" value="Create Pie" class="createbtn">
+                </form>
+            </div>
+        </div>
+    <div class="logout">
+        <form action="logout">
+            <input type="submit" href="/logout" value="Logout" class="createbtn">
+        </div>
+</form>
+</body>
+</html>
